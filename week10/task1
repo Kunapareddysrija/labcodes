@@ -1,0 +1,78 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ApiListScreen(),
+    );
+  }
+}
+
+class ApiListScreen extends StatefulWidget {
+  const ApiListScreen({super.key});
+
+  @override
+  State<ApiListScreen> createState() => _ApiListScreenState();
+}
+
+class _ApiListScreenState extends State<ApiListScreen> {
+  List posts = [];
+  bool isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchPosts();
+  }
+
+  Future<void> fetchPosts() async {
+    final response = await http.get(
+      Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+    );
+
+    if (response.statusCode == 200) {
+      setState(() {
+        posts = jsonDecode(response.body);
+        isLoading = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("ListView using API"),
+        centerTitle: true,
+      ),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  margin: const EdgeInsets.all(10),
+                  child: ListTile(
+                    leading: const Icon(Icons.article),
+                    title: Text(
+                      posts[index]['title'],
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(posts[index]['body']),
+                  ),
+                );
+              },
+            ),
+    );
+  }
+}
