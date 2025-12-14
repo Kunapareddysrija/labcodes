@@ -1,0 +1,70 @@
+1. What is Flutter?
+
+Flutter is an open-source UI framework by Google used to build natively compiled mobile, web, and desktop applications from a single codebase.
+
+2. What are the key features of Flutter?
+
+Single codebase for multiple platforms
+
+Fast development with Hot Reload
+
+Rich set of customizable widgets
+
+High performance (compiled to native code)
+
+3. What is Dart and why is it used in Flutter?
+
+Dart is a programming language developed by Google. It is used in Flutter because it offers fast execution, easy UI development, and supports Hot Reload.
+
+4. What are the advantages of using Flutter?
+
+Faster app development
+
+Native-like performance
+
+Consistent UI across platforms
+
+Strong community and Google support
+
+5. What is Android Studio, and how is it used in Flutter?
+
+Android Studio is an IDE used to develop Flutter apps. It provides Flutter plugins, code editor, emulator, and debugging tools.
+
+6. How do you install Flutter and test its setup?
+
+Download Flutter SDK
+
+Add Flutter to system PATH
+
+Install Android Studio and Flutter plugin
+
+Run flutter doctor to verify setup
+
+7. What is the difference between Flutter and React Native?
+Flutter	React Native
+Uses Dart	Uses JavaScript
+Own rendering engine	Uses native UI components
+Better performance	Slightly lower performance
+8. Differences between web applications and mobile applications?
+
+Web apps run in browsers; mobile apps are installed
+
+Web apps need internet; mobile apps can work offline
+
+Mobile apps access device features more easily
+
+9. What is the purpose of a simulator and emulator in Flutter?
+
+They are used to test and run Flutter apps on virtual Android or iOS devices without needing a physical phone.
+
+10. Which tools are commonly used in the Flutter development environment?
+
+Flutter SDK
+
+Dart SDK
+
+Android Studio / VS Code
+
+Emulator / Simulator
+
+Git
