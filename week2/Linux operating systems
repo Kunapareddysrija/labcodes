@@ -1,0 +1,72 @@
+Linux Operating System:
+✅ Step 1: System Requirements
+OS: Ubuntu 20.04 or later (64-bit)
+Disk Space: 2.8 GB (excluding IDE/tools)
+Tools: bash, curl, git, unzip, xz-utils, libglu1-mesa
+✅ Step 2: Install Required Dependencies
+Open a terminal and run:
+sudo apt update
+sudo apt install curl git unzip xz-utils zip libglu1-mesa -y
+✅ Step 3: Download the Flutter SDK
+Download the stable Flutter release:
+cd ~
+curl -O https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.22.0-stable.tar.xz
+tar xf flutter_linux_3.22.0-stable.tar.xz.
+✅ Step 4: Add Flutter to PATH
+Add the Flutter tool to your PATH by editing .bashrc or .zshrc:
+echo 'export PATH="$HOME/flutter/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc.
+✅ Step 5: Run Flutter Doctor
+Check your environment setup:
+flutter doctor
+
+Create and Run Dart Program:
+
+1. void main() {
+  print('Hello, Dart!');
+}
+2. void main() {
+  // Variables and Data Types
+  int age = 25;
+  double height = 5.9;
+  String name = 'Ramesh';
+  bool isStudent = true;
+  print('Name: $name');
+  print('Age: $age');
+  print('Height: $height');
+  print('Is a student: $isStudent');
+  // Control Structure: if-else
+  if (age > 18) {
+    print('$name is an adult.');
+  } else {
+    print('$name is a minor.');
+  }
+
+  // Loops: for loop
+  print('Counting from 1 to 5:');
+  for (int i = 1; i <= 5; i++) {
+    print(i);
+  }
+3. void main() {
+  // Variables and Data Types
+  int age = 25;
+  double height = 5.9;
+  String name = 'Ramesh';
+  bool isStudent = true;
+  print('Name: $name');
+  print('Age: $age');
+  print('Height: $height');
+  print('Is a student: $isStudent');
+  // Control Structure: if-else
+  if (age > 18) {
+    print('$name is an adult.');
+  } else {
+    print('$name is a minor.');
+  }
+  print('Counting from 1 to 5:');
+  greet(name);
+}
+// Function definition
+void greet(String personName) {
+  print('Hello, $personName! Welcome to Dart.');
+}
